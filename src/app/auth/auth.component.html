@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-5">
+        <h2>Login</h2>
+      </div>
+    <div class="col-md-2"></div>
+      <div class="col-md-5">
+        <h2>No Account? Sign Up Free!</h2>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <form (ngSubmit)="onExistingCredentialsSubmitted(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="existingEmail">Email</label>
+          <input ngModel class="form-control" id="existingEmail" name="existingEmail" type="text">
+        </div>
+        <div class="form-group">
+          <label for="existingPassword">Password</label>
+          <input
+            class="form-control"
+            id="existingPassword"
+            name="existingPassword"
+            ngModel
+            type="password">
+        </div>
+        <button class="btn btn-default" type="submit">Sign In</button>
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+      <form (ngSubmit)="onNewCredentialsSubmitted(g)" #g="ngForm">
+        <div class="form-group">
+          <label for="newEmail">Email</label>
+          <input ngModel class="form-control" id="newEmail" name="newEmail" type="text">
+        </div>
+        <div class="form-group">
+          <label for="newPassword">Password</label>
+          <input
+            class="form-control"
+            id="newPassword"
+            name="newPassword"
+            ngModel
+            type="password">
+        </div>
+        <button class="btn btn-default" type="submit">Sign Up</button>
+        <button class="btn btn-default" type="button" routerLink="/Reset-Password">Forgot Password</button>
+      </form>
+    </div>
+  </div>
+</div>

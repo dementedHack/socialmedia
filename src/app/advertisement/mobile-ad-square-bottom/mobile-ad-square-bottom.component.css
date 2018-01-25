@@ -1,0 +1,29 @@
+.img-responsive{
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 250px;
+  max-width: 250px;
+}
+
+#singleAdContainer{
+  text-align: center;
+}
+
+#multipleAdContainer{
+  margin: auto;
+}
+
+@media (max-width: 1151px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  #adContainer1{
+    margin: 0% 5% 0% -5%;
+  }
+  #adContainer3{
+    margin: 0% -5% 0% 5%;
+  }
+
+  #multipleAdContainer{
+    margin-left: -2%;
+  }
+
+}

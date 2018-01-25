@@ -1,0 +1,31 @@
+.container-fluid{
+  margin: 30px 0px 0px 0px;
+  background-color: black;
+}
+
+#sideSquareAd{
+  margin-top: 15px;
+}
+
+#adBottomRow{
+  margin: 60px 0px 60px 0px;
+}
+
+.video {
+  width: 85%;
+  height: 43%;
+}
+
+.videoDiv {
+  margin-bottom: 20px;
+}
+
+.col-md-9 {
+  margin-top: 50px;
+}
+
+.video-container {
+  margin-left: 8%;
+  margin-top: 4%;
+  width: 100%;
+}

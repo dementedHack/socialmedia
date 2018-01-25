@@ -1,0 +1,22 @@
+.container {
+  margin: auto;
+}
+
+li {
+  background-color: white;
+}
+
+#uploadButton {
+  margin: 10px 0px 0px 0px;
+}
+
+#myProgress {
+  width: 50%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}

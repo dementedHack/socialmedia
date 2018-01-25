@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>
+    Get Support
+  </h1>
+  <p>
+    If there are any bugs, issues, or concerns with any of the content on our site, please let us know immediately.
+    Your feedback is greatly appreciated and helps ensure that we continue to provide the highest quality media site
+    in the world.
+  </p>
+
+  <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">
+    <div class="input-group">
+      <label>Email</label>
+      <input type="text" class="form-control" id="email" name="email" ngModel>
+    </div>
+    <div class="input-group">
+      <label>Name</label>
+      <input class="form-control" id="name" ngModel name="name">
+    </div>
+    <label class="">Type of Inquiry:</label>
+    <div appDropdown class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        {{ inquirySelected }}
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu form-control" aria-labelledby="dropdownMenu1">
+        <li *ngFor="let inquiry of inquiries;" id="category" name="category" value="{{inquiry}}">
+          <a (click)="onInquiryTypeSelected(inquiry)">{{ inquiry }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="input-group">
+      <label>Message</label>
+      <textarea type="text" class="form-control" placeholder="" ngModel id="message" name="message"></textarea>
+    </div>
+    <button type="submit" id="sendButton" class="btn btn-default">Send</button>
+  </form>
+</div>

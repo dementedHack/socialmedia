@@ -1,0 +1,9 @@
+<div class="row" id="recommended-videos-container">
+  <div *ngFor="let recommendedSidebarVideo of recommendedSidebarVideos; let count = index">
+    <img [src]="recommendedSidebarVideo" class="img img-responsive col-md-6" *ngIf="count < 2; else conditionalMobile">
+    <ng-template #conditionalMobile>
+      <img [src]="recommendedSidebarVideo" class="img img-responsive col-md-6 hidden-sm hidden-xs">
+    </ng-template>
+  </div>
+
+</div>

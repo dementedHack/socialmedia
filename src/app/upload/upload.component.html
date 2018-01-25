@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="isLoggedIn; else loginPrompt" class="col-md-5 col-sm-5 col-xs-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <h1>Upload Media</h1>
+        <div class="input-group">
+          <label for="movie-title" class="">File Name</label>
+          <input type="text" class="form-control" placeholder="Title" id="movie-title" [value]="selectedVideo.title" (keyup)="onTitleTyped($event)">
+        </div>
+        <div class="input-group">
+          <label for="fileUpload">Upload File</label>
+          <input type="file" class="form-control" id="fileUpload" (change)="setFile($event)" name="file-chooser" type="file" accept=".png, .avi,.jpg,.jpeg,.mov,.mp4">
+        </div>
+        <label for="movie-title" class="">Select Media Type</label>
+        <div appDropdown class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{ selectedVideo.mediaType }}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu form-control" aria-labelledby="dropdownMenu1">
+            <li *ngFor="let mediaType of mediaTypes;" value="">
+              <a (click)="onMediaTypeSelected(mediaType)">{{ mediaType }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="input-group">
+          <label>Categories</label>
+          <tag-input theme='dark' [ngModel]="selectedCategories"
+                     [onlyFromAutocomplete]="true" (onAdd)="onItemAdded($event, selectedCategories)"
+                     (onRemove)="onItemRemoved($event, selectedCategories)">
+            <tag-input-dropdown [showDropdownIfEmpty]="true"
+                                [autocompleteItems]="autoCompleteCategoryItems">
+            </tag-input-dropdown>
+          </tag-input>
+        </div>
+        <div class="input-group">
+          <label>Talent</label>
+          <tag-input theme='dark' [ngModel]="selectedTalentItems"
+                     [onlyFromAutocomplete]="false" (onAdd)="onItemAdded($event, selectedTalentItems)"
+                     (onRemove)="onItemRemoved($event, selectedTalentItems)">
+            <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="autoCompleteTagItems"></tag-input-dropdown>
+          </tag-input>
+        </div>
+        <div class="input-group">
+          <label>File Tags</label>
+          <tag-input theme='dark' [ngModel]="selectedTagItems"
+                     [onlyFromAutocomplete]="false" (onAdd)="onItemAdded($event, selectedTagItems)"
+                     (onRemove)="onItemRemoved($event, selectedTagItems)">
+            <tag-input-dropdown [showDropdownIfEmpty]="true" [limitItemsTo]="4"
+                                [autocompleteItems]="autoCompleteTagItems">
+            </tag-input-dropdown>
+          </tag-input>
+        </div>
+        <button class="btn btn-primary" id="uploadButton" (click)="uploadFile()">Upload</button>
+      </div>
+    </div>
+    <ng-template #loginPrompt>
+      <div class="col-md-7 col-sm-7 col-xs-7">
+        <h1>Login to Upload Media</h1>
+        <h3>Click <a routerLink="/User_Authentication">here</a> to login</h3>
+      </div>
+    </ng-template>
+    <div class="col-md-7 col-sm-7 col-xs-7">
+      <div *ngIf="uploadedStatus">
+        <h1>Uploaded Status: {{uploadedStatus}}%</h1>
+        <div id="myProgress">
+          <div #myProgressBar id="myBar" style="width: 0%"></div>
+        </div>
+      </div>
+      <app-dashboard-ad class="hidden-xs"></app-dashboard-ad>
+    </div>
+</div>
+

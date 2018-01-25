@@ -1,0 +1,10 @@
+.img-responsive{
+  min-width: 233px;
+  min-height: 150px;
+  max-height: 150px;
+  max-width: 233px;
+}
+
+.videoContainer {
+  margin: 20px 0px 20px 0px;
+}

@@ -1,0 +1,6 @@
+<div class="container">
+  <h3>Please help our site grow by donating!</h3>
+  <h4>$ {{donationAmount | number:'3.1-5' }}</h4>
+  <input type="range" [(ngModel)]="donationAmount" max="200.00" min="5.00" step="0.05" id="donationRange">
+  <button class="btn btn-primary"(click)="openCheckout()">Donate</button>
+</div>

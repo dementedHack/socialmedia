@@ -1,0 +1,9 @@
+#adImage {
+  min-width: 300px;
+  min-height: 200px;
+  margin-top: 25px;
+}
+
+.adImageWindowAdjusted {
+  margin-left: -67px;
+}

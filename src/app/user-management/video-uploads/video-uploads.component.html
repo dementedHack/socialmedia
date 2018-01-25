@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-3 col-sm-4 col-xs-5">
+    <app-side-menu></app-side-menu>
+  </div>
+  <div class="col-md-9 col-sm-8 col-xs-7">
+    <h1 id="header">My Video Uploads</h1>
+    <div *ngFor="let video of videos">
+      <div *ngIf="!video">
+        <h1>No videos uploaded. Begin uploading</h1>
+      </div>
+      <div class="col-md-4">
+        <a routerLink="/Edit_Video" [queryParams]="{videoId: video.key}"><img [src]="video.thumbnailPreview"></a>
+        <div class="mediaInfo">
+          <p>{{video.title | uppercase}}</p>
+          <p>
+            {{video.views}} Views
+            {{video.likes}} <span class="glyphicon glyphicon-thumbs-up"></span>
+            {{video.dislikes}} <span class="glyphicon glyphicon-thumbs-down"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

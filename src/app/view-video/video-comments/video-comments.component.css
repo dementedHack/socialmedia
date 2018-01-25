@@ -1,0 +1,33 @@
+.container-fluid{
+  width: 102%
+}
+
+#loginButton{
+  width: 70%;
+}
+
+#userCommentContainer{
+  margin: 13px 0px 0px 0px;
+}
+
+.viewMoreCommentsButtonContainer{
+  text-align: center;
+  margin: auto;
+}
+
+.loginButtonContainer{
+  text-align: center;
+  margin: 0px 0px 15px 0px;
+}
+
+#commentForm {
+  text-align: center;
+  margin: 15px 0px 0px 0px;
+}
+
+#postCommentButton {
+}
+
+#noPostText {
+  text-align: center;
+}

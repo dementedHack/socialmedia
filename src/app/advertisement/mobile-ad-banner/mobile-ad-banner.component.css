@@ -1,0 +1,16 @@
+#mobileBannerAd{
+  margin: 20px 0px 0px 0px;
+  width: 100%
+}
+
+@media (max-width: 625px) {
+  #mobileBannerAd{
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  #mobileBannerAd{
+    margin: 10px 0px 0px 0px;
+  }
+}

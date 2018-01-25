@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="col-md-7">
+    <h1>Edit Video</h1>
+    <form (ngSubmit)="onUpdateButtonClicked(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input ngModel class="form-control" id="title" name="title" type="text" value="{{currentVideo.title}}">
+      </div>
+      <label for="mediaType" class="">Media Type</label>
+      <div appDropdown class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="mediaType" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="true" name="mediaType" disabled="true">
+          {{ currentVideo.mediaType }}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu form-control" aria-labelledby="dropdownMenu1">
+          <li *ngFor="let mediaType of mediaTypes;" value="">
+            <a (click)="onMediaTypeSelected(mediaType)">{{ mediaType }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="input-group">
+        <label>Categories</label>
+        <tag-input theme='dark' [ngModel]="categories" name="categories"
+                   [onlyFromAutocomplete]="true" (onAdd)="onCategoryItemAdded($event, categories)"
+                   (onRemove)="onCategoryItemRemoved($event, categories)">
+          <tag-input-dropdown [showDropdownIfEmpty]="true"
+                              [autocompleteItems]="autoCompleteCategoryItems">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="input-group">
+        <label>Talent</label>
+        <tag-input theme='dark' [ngModel]="talent" name="talent"
+                   [onlyFromAutocomplete]="false" (onAdd)="onTagItemAdded($event, talent)"
+                   (onRemove)="onTagItemRemoved($event, talent)">
+          <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="autoCompleteTagItems"></tag-input-dropdown>
+        </tag-input>
+      </div>
+      <div class="input-group">
+        <label>File Tags</label>
+        <tag-input theme='dark' [ngModel]="tags" name="tags"
+                   [onlyFromAutocomplete]="false" (onAdd)="onTagItemAdded($event, tags)"
+                   (onRemove)="onTagItemRemoved($event, tags)">
+          <tag-input-dropdown [showDropdownIfEmpty]="true" [limitItemsTo]="4"
+                              [autocompleteItems]="autoCompleteTagItems">
+          </tag-input-dropdown>
+        </tag-input>
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button class="btn btn-danger" (click)="onDeleteButtonClicked()">Delete Video</button>
+    </form>
+  </div>
+  <div class="col-md-5">
+    <h3>Thumbnail preview</h3>
+    <img [src]="currentVideo.thumbnailPreview"
+         alt="preview" class="img img-responsive">
+  </div>
+</div>

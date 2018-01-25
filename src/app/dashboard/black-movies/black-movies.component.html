@@ -1,0 +1,74 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 id="panelHeadingText"><strong>Black Movies</strong>
+      <button id="viewMoreButtonTop" class="btn default">View More</button>
+    </h4>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-9 col-xs-12">
+          <div class="row">
+            <div class="" *ngFor="let hotRightNowVideo of hotRightNowVideos; let indexCount = index">
+              <div *ngIf="indexCount < 2; else conditionalMovieThumbnail" class="col-md-4 col-xs-12 col-sm-6 movieThumbnailContainer">
+                <a routerLink="/View_Video" [queryParams]="{videoId: hotRightNowVideo.key}">
+                  <img class="movieThumbnail img img-responsive" [src]="hotRightNowVideo.thumbnailPreview">
+                  <div class="movieThumbnailText">
+                      <div class="movieTitle">
+                        <strong><p>{{ hotRightNowVideo.title }}</p></strong>
+                      </div>
+                      <div class="movieInfo">
+                        <p>{{ hotRightNowVideo.views }} Views <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 76%
+                        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 24%</p>
+                      </div>
+                  </div>
+                </a>
+              </div>
+              <ng-template #conditionalMovieThumbnail>
+                <div *ngIf="indexCount < 4; else anotherConditionMovieThumbnail" class="col-md-4 col-sm-6 hidden-xs movieThumbnailContainer">
+                  <a routerLink="/View_Video" [queryParams]="{videoId: hotRightNowVideo.key}">
+                    <img class="movieThumbnail img img-responsive" [src]="hotRightNowVideo.thumbnailPreview">
+                    <div class="col-sm-1 col-xs-1"></div>
+                    <div class="movieThumbnailText col-sm-12 col-xs-9">
+                      <div class="movieTitle">
+                        <strong><p>{{ hotRightNowVideo.title }}</p></strong>
+                      </div>
+                      <div class="movieInfo">
+                        <p>{{ hotRightNowVideo.views }} Views
+                          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 76%
+                          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 24%</p>
+                      </div>
+                    </div>
+                  </a></div>
+              </ng-template>
+              <ng-template #anotherConditionMovieThumbnail>
+                <div  class="col-md-4 hidden-sm hidden-xs movieThumbnailContainer">
+                  <a routerLink="/View_Video" [queryParams]="{videoId: hotRightNowVideo.key}">
+                    <img class="movieThumbnail img img-responsive" [src]="hotRightNowVideo.thumbnailPreview">
+                    <div class="col-sm-1 col-xs-1"></div>
+                    <div class="movieThumbnailText col-sm-12 col-xs-9">
+                      <div class="movieTitle">
+                        <strong><p>{{ hotRightNowVideo.title }}</p></strong>
+                      </div>
+                      <div class="movieInfo">
+                        <p>{{ hotRightNowVideo.views }} Views <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> 76%
+                          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span> 24%</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 hidden-sm hidden-xs">
+          <app-dashboard-ad></app-dashboard-ad>
+        </div>
+      </div>
+      <div class="col-sm-12 hidden-md hidden-lg buttonContainer">
+        <button type="button" class="btn btn-default" id="viewMoreButtonBottom">View All</button>
+      </div>
+    </div>
+  </div>
+</div>
+

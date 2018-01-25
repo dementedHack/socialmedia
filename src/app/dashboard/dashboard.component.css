@@ -1,0 +1,16 @@
+#dashboardContainer{
+  padding: 0px 40px 0px 50px;
+}
+
+#siteMessage{
+  margin: 0px 0px 25px 0px;
+}
+
+@media (max-width: 1309px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+
+  .panel {
+    margin-left: -20px;
+  }
+
+}

@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">All Comments</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 loginButtonContainer">
+              <button id="loginButton" class="btn btn-default" *ngIf="!isLoggedIn" routerLink="/User_Authentication">Log In or Sign Up to post a comment</button>
+            </div>
+          </div>
+          <div class="row" id="userCommentRow" #userCommentRow>
+            <!-- add class{{ count }} -->
+              <div *ngFor="let post of trialPosts; let count = index" class="col-md-12">
+                <!-- add data-id="{{ postIds[count] }}" -->
+                <div #userCommentContainer id="userCommentContainer" data-id="{{ postIds[count] }}">
+                  <div id="userProfileImage" class="col-md-2 col-sm-3 col-xs-3">
+                    <img src="https://www.appointbetterboards.co.nz/Custom/Appoint/img/avatar-large.png" class="img-responsive">
+                  </div>
+                  <div appHoverDelete id="postBody" class="col-md-10 col-sm-9"  data-id="{{ postIds[count] }}" posts='{{postIds[count]}}'>
+                    <div id="postInfo" #postInfo>
+                      <!--  -->
+                      {{ usernames[count] }}<span class="glyphicon glyphicon-time" aria-hidden="true"></span><span> {{post.timestamp}}</span>
+                    </div>
+                    <p>{{post.body}}</p>
+                    <div #userCommentSocial>
+                      <span id="likesCount">{{ post.likes }}</span>
+                      <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="onCommentLikeDislikeClicked(true, postIds[count])"></i>
+                      <span id="dislikesCount">{{ post.dislikes }}</span>
+                      <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="onCommentLikeDislikeClicked(false, postIds[count])"></i>
+                      <a href=""> Reply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div *ngIf="posts.length > 5" class="viewMoreCommentsButtonContainer">
+              <button id="viewMoreCommentsButton" class="btn btn-default">View More</button>
+            </div>
+            <div class="container">
+              <div *ngIf="trialPosts.length === 0" id="">
+                <h3>No posts yet. Be the first.</h3>
+              </div>
+            </div>
+            <div *ngIf="isLoggedIn" class="col-md-12">
+              <form id="commentForm">
+                <div class="form-group">
+                  <label for="comment" class="pull-left">Comment:</label>
+                  <textarea class="form-control" rows="5" id="comment" (keyup)="onPostTyped(t)" #t ></textarea>
+                  <button type="submit" id="postCommentButton" class="btn btn-primary pull-left" (click)="onPostSubmitted()">Post Comment</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

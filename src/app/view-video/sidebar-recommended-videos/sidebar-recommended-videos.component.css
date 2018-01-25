@@ -1,0 +1,16 @@
+#recommended-videos-container{
+  background-color: black;
+}
+
+@media (min-width: 992px){
+  .col-md-6 {
+    margin: 10px -26px 0px 7px;
+  }
+}
+
+.img {
+  min-height: 131px;
+  min-width: 233px;
+  max-height: 131px;
+  max-width: 233px;
+}

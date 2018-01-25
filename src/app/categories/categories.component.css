@@ -1,0 +1,30 @@
+.img {
+  max-width: 175px;
+  min-width: 175px;
+  max-height: 215px;
+  min-height: 215px;
+  margin: -11px 0px 0px -1px;
+}
+
+.category-name {
+  text-align: center;
+  margin-top: 4px;
+}
+
+.caption {
+  padding: 0px 0px 0px 0px;
+}
+
+.thumbnail {
+  margin: auto;
+  padding: 10px 0px 0px 0px;
+  height: 280px;
+  min-height: 255px;
+  max-height: 255px;
+  min-width: 175px;
+  max-width: 175px;
+}
+
+.category-container{
+  margin: 20px 0px 0px 0px;
+}

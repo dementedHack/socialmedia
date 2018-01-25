@@ -1,0 +1,21 @@
+<div class="container">
+  <!--<div class="col-md-2 col-sm-3 col-xs-3"></div>-->
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div *ngFor="let video of videos">
+      <div class="video-container col-lg-3 col-md-4 col-sm-6 col-xs-12" routerLink="/View_Video" [queryParams]="{videoId: video.key}">
+          <div class="thumbnail">
+            <img src="{{video.thumbnail}}" alt="Lights" class="img img-responsive" style="width:100%">
+            <div class="caption">
+              <h2 class="title" routerLink="/View_Video" [queryParams]="{videoId: video.key}">{{video.title}}</h2>
+              {{video.likes}} <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+              {{video.dislikes}} <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 page-index">
+    1, 2, 3, 4, 5
+  </div>
+</div>
+

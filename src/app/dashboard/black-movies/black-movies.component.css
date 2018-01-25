@@ -1,0 +1,101 @@
+#viewMoreButtonBottom {
+  width: 80%;
+}
+
+.img-responsive{
+  min-width: 233px;
+  min-height: 150px;
+  max-height: 150px;
+  max-width: 233px;
+  margin: auto;
+}
+
+a {
+  position: relative;
+  z-index: 1;
+}
+
+.movieThumbnailText {
+  margin: 0% 0% 0% 5%;
+}
+
+.movieInfo{
+  margin-top: -12px;
+}
+
+.buttonContainer{
+  text-align: center;
+}
+
+#panelHeadingText{
+  margin-left: 20px;
+}
+
+#viewMoreButtonTop {
+  float: right;
+}
+
+.movieThumbnail {
+  margin: auto;
+}
+
+.movieThumbnailContainer{
+  margin: auto;
+}
+
+
+@media (max-width: 480px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  .movieThumbnail {
+    margin : auto;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+
+  .movieThumbnail{
+    margin: auto;
+  }
+
+  #viewMoreButtonTop {
+    display: none;
+  }
+
+}
+
+@media (max-width: 800px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+
+  #viewMoreButtonTop {
+    display: none;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+}
+
+@media (max-width: 925px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 1240px) {
+  .panel {
+    margin-left: 0px !important;
+  }
+
+}
+
+
+@media (max-width: 1309px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+
+}

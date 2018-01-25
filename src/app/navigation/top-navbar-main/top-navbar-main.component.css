@@ -1,0 +1,80 @@
+.navbar{
+  height: 75px;
+}
+
+.navbar a {
+  margin-top: 15px;
+}
+
+.navbar button{
+  margin-top: 15px;
+}
+
+.navbar input{
+  margin-top: 15px;
+}
+
+#navbarId {
+  margin: 15px 0px 0px 60px;
+}
+
+#loginButton {
+  margin: 0px 30px 0px 0px;
+}
+
+#userSearchInput{
+  width: 400px;
+}
+
+@media (max-width: 1071px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  #userSearchInput{
+    width: 250px;
+  }
+
+  #navbarId {
+    margin: 15px 0px 0px 30px;
+  }
+}
+
+@media (max-width: 890px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  #userSearchInput{
+    width: 165px;
+  }
+
+  #navbarId {
+    margin: 15px 0px 0px 0px;
+  }
+}
+
+@media (max-width: 775px) {
+  #navbarId {
+    margin: 15px 0px 0px 30px;
+  }
+  #upgradeButton {
+    display: none;
+  }
+}
+
+#loginButton {
+  cursor: pointer;
+}
+
+.icon-bar {
+  margin: -20px 0px 0px 0px;
+}
+
+#uploadSpan {
+  margin: 0px 0px 0px 5px;
+}
+#upgradeSpan {
+  margin: 0px 0px 0px 5px;
+}
+.dropdown-menu {
+  margin-left: -620%;
+}
+
+/*.myButton {*/
+  /*background: url("https://d30y9cdsu7xlg0.cloudfront.net/png/204479-200.png");*/
+/*}*/

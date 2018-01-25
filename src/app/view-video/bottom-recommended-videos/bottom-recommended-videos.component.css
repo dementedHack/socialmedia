@@ -1,0 +1,20 @@
+.img-responsive{
+  min-height: 131px;
+  min-width: 233px;
+  max-height: 131px;
+  max-width: 233px;
+  margin: auto;
+}
+
+.videoInfo{
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .img-responsive {
+    background-size: cover;
+    margin: auto;
+  }
+
+}

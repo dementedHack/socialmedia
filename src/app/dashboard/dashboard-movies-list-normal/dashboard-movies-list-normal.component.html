@@ -1,0 +1,34 @@
+<div class="hidden-lg hidden-md col-sm-1"></div>
+<div class="col-md-12 col-lg-12 col-sm-10">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 id="panelHeadingText"><strong>{{movieType}} Movies</strong>
+        <button id="viewMoreButtonTop" class="btn default pull-right">View More</button>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let video of videos; let indexCount = index">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="videoContainer" style="text-align: center;">
+                <div style="display: inline-block; text-align: left;">
+                  <a routerLink="/View_Video" [queryParams]="{videoId: video.key}"><img class="img img-responsive" [src]="video.thumbnailPreview"></a>
+                  <div class="mediaInfo">
+                    <p>{{video.title | uppercase}}</p>
+                    <p>
+                      {{video.views}} Views
+                      {{video.likes}} <span class="glyphicon glyphicon-thumbs-up"></span>
+                      {{video.dislikes}} <span class="glyphicon glyphicon-thumbs-down"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hidden-lg hidden-md col-sm-1"></div>

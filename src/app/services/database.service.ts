@@ -106,7 +106,8 @@ export class DatabaseService {
               thumbnails: {},
               categories: selectedVideo.categories,
               fileName: selectedVideo.fileName,
-              premium: false
+              premium: false,
+              private: false
             }
           );
       rootRef.child('User').child(uploadedBy).child('movie').update(
@@ -214,7 +215,7 @@ export class DatabaseService {
   readDataFromChild(parent, child, readLimit) {
     const rootRef = firebase.database().ref();
     var mySnapshotValues = [];
-    rootRef.child(parent).child(child).limitToLast(readLimit).once('value',
+    rootRef.child(parent).child(child).once('value',
       (snapshot) => {
       if (snapshot.val()) {
         console.log(snapshot.val())

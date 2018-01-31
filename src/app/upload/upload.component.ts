@@ -140,8 +140,8 @@ export class UploadComponent implements OnInit {
     // Configure the S3 information - this is a user that is allowed to upload to this project's useruploads bucket
       AWS.config.update({
         region: 'us-west-1',
-        accessKeyId: 'AKIAJWWRX5JPSGLU3W3A',
-        secretAccessKey: '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'
+        accessKeyId: 'AKIAJYQJBJS4AX2JGSGQ',
+        secretAccessKey: '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'
       });
       if (this.selectedCategories.length <= 0) {
         return alert('No category was selected!');
@@ -157,6 +157,7 @@ export class UploadComponent implements OnInit {
         const s3 = new AWS.S3({
           apiVersion: '2006-03-01'
         });
+        console.log(uploadParams);
         const s3URIToConvert = this.selectedVideo.mediaType + '/' + this.selectedVideo.fileName + this.selectedVideo.fileExtension;
         this.selectedVideo.timeUploaded = this.timestampService.createTimestampForNow();
         var currentUploadProgress = 0;

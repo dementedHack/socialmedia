@@ -55,6 +55,7 @@ import { TestComponent } from './test/test.component';
 import { SearchComponent } from './search/search.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ResetPasswordSuccessComponent } from './auth/reset-password/reset-password-success/reset-password-success.component';
+import { LikedVideosComponent } from './user-management/liked-videos/liked-videos.component';
 
 const appRoutes: Routes = [
   {path: '', component: DashboardComponent, pathMatch: 'full'},
@@ -119,7 +120,8 @@ const appRoutes: Routes = [
     TestComponent,
     SearchComponent,
     ResetPasswordComponent,
-    ResetPasswordSuccessComponent
+    ResetPasswordSuccessComponent,
+    LikedVideosComponent
   ],
   imports: [
     BrowserModule,

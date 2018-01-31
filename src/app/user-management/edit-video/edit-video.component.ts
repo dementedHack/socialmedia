@@ -56,7 +56,15 @@ export class EditVideoComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.userId);
+    this.databaseService.readDataFromParent('Category', 50).then(
+      (data) => {
+        console.log(data);
+        for (var i = 0; i < Object.keys(data).length; i++) {
+          this.autoCompleteCategoryItems.push(Object.keys(data[i])[0]);
+        }
+        console.log(this.autoCompleteCategoryItems);
+      }
+    );
     // Get the videoId from the url
     this.assetId = this.route.snapshot.queryParams.videoId;
     // Get data from the DB based on the URL
